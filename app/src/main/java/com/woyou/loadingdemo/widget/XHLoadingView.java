@@ -18,12 +18,12 @@ import com.woyou.loadingdemo.R;
 /**
  * Created by Xiho on 11:21.
  */
-public class LoadingView extends FrameLayout {
+public class XHLoadingView extends FrameLayout {
 
     private Context mContext;
-
+    // 加载中的布局
     private LinearLayout mLinearLoad;
-
+    //其他加载的布局
     private LinearLayout mLinearLoading;
 
     private TextView mTvLoading;
@@ -41,22 +41,22 @@ public class LoadingView extends FrameLayout {
     private AnimationDrawable animation;
 
 
-    public LoadingView(Context context) {
+    public XHLoadingView(Context context) {
         super(context);
         mContext = context;
     }
 
-    public LoadingView(Context context, AttributeSet attrs) {
+    public XHLoadingView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
     }
 
-    public LoadingView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public XHLoadingView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
     }
 
-    public LoadingView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public XHLoadingView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         mContext = context;
 
@@ -102,7 +102,7 @@ public class LoadingView extends FrameLayout {
      */
     private String mLoadingText;
     private int mLoadingIcon;
-    public LoadingView withLoadingIcon(int resId){
+    public XHLoadingView withLoadingIcon(int resId){
         mLoadingIcon = resId;
         return this;
     }
@@ -112,7 +112,7 @@ public class LoadingView extends FrameLayout {
      */
     private String mLoadEmptyText;
     private int mLoadEmptyIcon;
-    public LoadingView withEmptyIcon(int resId){
+    public XHLoadingView withEmptyIcon(int resId){
         mLoadEmptyIcon = resId;
         return this;
     }
@@ -122,7 +122,7 @@ public class LoadingView extends FrameLayout {
      */
     private String mLoadNoNetworkText;
     private int mNoNetworkIcon;
-    public LoadingView withNoNetIcon(int resId){
+    public XHLoadingView withNoNetIcon(int resId){
         mNoNetworkIcon = resId;
         return this;
     }
@@ -136,11 +136,15 @@ public class LoadingView extends FrameLayout {
         void onRetry();
     }
 
-    public LoadingView withOnRetryListener(OnRetryListener mOnRetryListener){
+    public XHLoadingView withOnRetryListener(OnRetryListener mOnRetryListener){
         this.mOnRetryListener = mOnRetryListener;
         return this;
     }
 
+    /**
+     *  设置加载的状态
+     * @param state
+     */
     public void setState(LoadingState state){
         if(mState==state){
             return;
@@ -161,18 +165,18 @@ public class LoadingView extends FrameLayout {
     public boolean btnErrorEnable = true;
     public boolean btnNoNetworkEnable = true;
 
-    public LoadingView withBtnNoNetEnnable(boolean ennable) {
+    public XHLoadingView withBtnNoNetEnnable(boolean ennable) {
         btnNoNetworkEnable = ennable;
         return this;
     }
 
-    public LoadingView withBtnErrorEnnable(boolean ennable) {
+    public XHLoadingView withBtnErrorEnnable(boolean ennable) {
         btnErrorEnable = ennable;
         return this;
     }
 
 
-    public LoadingView withBtnEmptyEnnable(boolean ennable) {
+    public XHLoadingView withBtnEmptyEnnable(boolean ennable) {
         btnEmptyEnable = ennable;
         return this;
     }
@@ -183,6 +187,7 @@ public class LoadingView extends FrameLayout {
      */
     private void changeState(LoadingState state) {
         switch (state) {
+            //加载中
             case STATE_LOADING:
                 mState = LoadingState.STATE_LOADING;
                 mIvLoading.setImageResource(mLoadingIcon);
@@ -193,6 +198,7 @@ public class LoadingView extends FrameLayout {
                 if (animation != null)
                     animation.start();
                 break;
+            //数据为空
             case STATE_EMPTY:
                 mState = LoadingState.STATE_EMPTY;
                 mIvLoad.setImageResource(mLoadEmptyIcon);
@@ -204,6 +210,7 @@ public class LoadingView extends FrameLayout {
                     mBtnLoad.setVisibility(GONE);
                 }
                 break;
+            //加载失败
             case STATE_ERROR:
                 mState = LoadingState.STATE_ERROR;
                 mIvLoad.setImageResource(mErrorIco);
@@ -215,6 +222,7 @@ public class LoadingView extends FrameLayout {
                     mBtnLoad.setVisibility(GONE);
                 }
                 break;
+            //无网络
             case STATE_NO_NET:
                 mState = LoadingState.STATE_NO_NET;
                 mIvLoad.setImageResource(mNoNetworkIcon);
@@ -237,22 +245,32 @@ public class LoadingView extends FrameLayout {
     private String mLoadErrorText;
     private int mErrorIco;
 
-    public LoadingView withErrorIco(int resId) {
+    public XHLoadingView withErrorIco(int resId) {
         mErrorIco = resId;
         return this;
     }
 
-    public LoadingView withLoadEmptyText(int resId) {
+    /**
+     * 加载空数据
+     * @param resId
+     * @return
+     */
+    public XHLoadingView withLoadEmptyText(int resId) {
         mLoadEmptyText = getResources().getString(resId);
         return this;
     }
 
-    public LoadingView withLoadEmptyText(String mLoadEmptyText) {
+    public XHLoadingView withLoadEmptyText(String mLoadEmptyText) {
         this.mLoadEmptyText = mLoadEmptyText;
         return this;
     }
 
-    public LoadingView withLoadNoNetworkText(int resId) {
+    /**
+     *  无网络时候加载文字
+     * @param resId
+     * @return
+     */
+    public XHLoadingView withLoadNoNetworkText(int resId) {
         mLoadNoNetworkText = getResources().getString(resId);
         return this;
     }
@@ -261,43 +279,66 @@ public class LoadingView extends FrameLayout {
     public String btn_error_text = "重试";
     public String btn_nonet_text = "重试";
 
-    public LoadingView withBtnEmptyText(String text) {
+    /**
+     * 数据为空的Button的文字提示
+     * @param text
+     * @return
+     */
+    public XHLoadingView withBtnEmptyText(String text) {
         this.btn_empty_text = text;
         return this;
     }
 
-    public LoadingView withBtnErrorText(String text) {
+    /**
+     * 加载错误的Button的文字提示
+     * @param text
+     * @return
+     */
+    public XHLoadingView withBtnErrorText(String text) {
         this.btn_error_text = text;
         return this;
     }
 
-    public LoadingView withBtnNoNetText(String text) {
-        this.btn_nonet_text = text;
-        return this;
-    }
-
-
-    public LoadingView withLoadNoNetworkText(String mLoadedNoNetText) {
-        this.mLoadNoNetworkText = mLoadedNoNetText;
-        return this;
-    }
-
-    public LoadingView withLoadErrorText(int resId) {
+    /**
+     * 加载错误的文字提示
+     * @param resId
+     * @return
+     */
+    public XHLoadingView withLoadErrorText(int resId) {
         this.mLoadErrorText = getResources().getString(resId);
         return this;
     }
-
-    public LoadingView withLoadErrorText(String mLoadedErrorText) {
+    public XHLoadingView withLoadErrorText(String mLoadedErrorText) {
         this.mLoadErrorText = mLoadedErrorText;
         return this;
     }
 
-    public LoadingView withLoadingText(int resId) {
+    /**
+     * 加载无网络的Button的文字提示
+     * @param text
+     * @return
+     */
+    public XHLoadingView withBtnNoNetText(String text) {
+        this.btn_nonet_text = text;
+        return this;
+    }
+
+    /**
+     * 加载没有网路的文字提示
+     * @param mLoadedNoNetText
+     * @return
+     */
+    public XHLoadingView withLoadNoNetworkText(String mLoadedNoNetText) {
+        this.mLoadNoNetworkText = mLoadedNoNetText;
+        return this;
+    }
+
+    public XHLoadingView withLoadingText(int resId) {
         this.mLoadingText = getResources().getString(resId);
         return this;
     }
 
-    public LoadingView withLoadingText(String mLoadingText) {
+    public XHLoadingView withLoadingText(String mLoadingText) {
         this.mLoadingText = mLoadingText;
         return this;
     }

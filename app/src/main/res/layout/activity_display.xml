@@ -10,13 +10,13 @@
     tools:context=".DisplayActivity">
 
 
-    <com.woyou.loadingdemo.widget.LoadingView
+    <com.woyou.loadingdemo.widget.XHLoadingView
         android:id="@+id/lv_loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:layout_centerInParent="true">
 
-    </com.woyou.loadingdemo.widget.LoadingView>
+    </com.woyou.loadingdemo.widget.XHLoadingView>
 
 </RelativeLayout>
