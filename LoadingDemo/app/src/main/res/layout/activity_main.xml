@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.woyou.loadingdemo.MainActivity">
+
+    <Button
+        android:id="@+id/btn_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="38dp"
+        android:text="加载中" />
+
+    <Button
+        android:id="@+id/btn_no_network"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_loading"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/btn_loading"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="38dp"
+        android:text="无网络" />
+
+    <Button
+        android:id="@+id/btn_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btn_no_network"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="38dp"
+        android:text="空数据" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="加载失败"
+        android:id="@+id/btn_error"
+        android:layout_below="@+id/btn_empty"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="41dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
