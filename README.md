@@ -13,7 +13,7 @@ Blog地址：[http://blog.csdn.net/u011974987/article/details/51455333][3]
 
 # License
 
-    Copyright 2016 JohnXu
+    Copyright 2016 Xuhao
     
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
