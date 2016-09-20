@@ -7,7 +7,7 @@
 
 
 **预览下效果图**：
-![这里写图片描述](http://img.blog.csdn.net/20160519152132230)
+![这里写图片描述](https://github.com/git-xuhao/XHLoadingView/raw/master/screenhot/test_loading.gif)
 
 
 测试apk 下载地址：[XHLoadingView.apk][2]
