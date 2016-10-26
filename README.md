@@ -1,19 +1,19 @@
 # XHLoadingView
 
 # 概述
-----
+
 在设计应用的时候，我们应该热爱极简主义，简单就是好的，对于很多用户来说，复杂的东西并不受欢迎。
 我要实现的是根据不同的情况去显示不同的加载效果，随用随调，效果是借鉴于某一项目的效果，我认为有必要提取出来改善封装一下，供以后使用。情况大致分为：加载中、无网络、无数据、加载失败等，这些仅仅就需要一个View 就可以搞定啦！
 
 
-# **预览下效果图**：
+# **效果图**：
 
 ![这里写图片描述](https://github.com/git-xuhao/XHLoadingView/raw/master/screenhot/test_loading.gif)
 
 
-测试apk 下载地址：[XHLoadingView.apk][2]
+apk：[XHLoadingView.apk][2]
 
-Blog地址：[http://blog.csdn.net/u011974987/article/details/51455333][3]
+Blog地址：[http://xuhaoblog.com/Android-custom-loadingview.html][3]
 
 
 
@@ -37,4 +37,4 @@ Blog地址：[http://blog.csdn.net/u011974987/article/details/51455333][3]
 
   [1]: http://img.blog.csdn.net/20160519152132230
   [2]: https://github.com/git-xuhao/XHLoadingView/blob/master/apk/app-debug.apk?raw=true
-  [3]: http://blog.csdn.net/u011974987/article/details/51455333
+  [3]: http://xuhaoblog.com/Android-custom-loadingview.html
