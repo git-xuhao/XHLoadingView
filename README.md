@@ -10,9 +10,9 @@
 ![这里写图片描述](https://github.com/git-xuhao/XHLoadingView/raw/master/screenhot/test_loading.gif)
 
 
-apk：[XHLoadingView.apk][2]
+apk：[DownLoad][2]
 
-Blog地址：[http://xuhaoblog.com/Android-custom-loadingview.html][3]
+Blog：[http://xuhaoblog.com/Android-custom-loadingview.html][3]
 
 
 
